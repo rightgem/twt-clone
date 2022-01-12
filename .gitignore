@@ -21,3 +21,4 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+#.env <집컴에 받고 돌려놓기, env파일은 항상 package.json 옆에 있을 것
