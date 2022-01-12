@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Auth from "../routes/Auth";
 import Home from "../routes/Home";
 // import NotFound from "../routes/NotFound";
 
-const AppRouter = () => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false); //isLoggedIn 기본값 false
+const AppRouter = ({ isLoggedIn }) => {
     // react-router-dom 구버전(~v5)
     // return (
         // <Router>
