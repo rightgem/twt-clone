@@ -1,7 +1,9 @@
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Profile from "routes/Profile";
 import Auth from "../routes/Auth";
 import Home from "../routes/Home";
+import Navigation from "./Navigation";
 // import NotFound from "../routes/NotFound";
 
 const AppRouter = ({ isLoggedIn }) => {
@@ -29,9 +31,13 @@ const AppRouter = ({ isLoggedIn }) => {
     //v6 방식
     return(
         <BrowserRouter>
+            {isLoggedIn && <Navigation />}
             <Routes>
                 {isLoggedIn ? (
-                    <Route exact path="/" element={ <Home/> } />
+                    <>
+                        <Route exact path="/" element={ <Home/> } />
+                        <Route exact path="/profile" element={ <Profile/> } />
+                    </>
                 ) : (
                     <Route exact path="/" element={ <Auth/> } />
                 )}
